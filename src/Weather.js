@@ -22,6 +22,7 @@ export default function Weather(props) {
   axios.get(url).then(showTemperature);
 
   let iconPath = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+
   if (temperature) {
     return (
       <div className="WeatherForecast">
@@ -32,7 +33,21 @@ export default function Weather(props) {
           <li>Description: {description} </li>
           <li>Humidity: {humidity}%</li>
           <li>Wind: {wind}km/h</li>
-          <img src={iconPath} alt="weatherIcon" />
+          <li>
+            <img src={iconPath} alt="weatherIcon" />
+          </li>
+          <br />
+          <small>
+            {" "}
+            <a
+              href="https://github.com/daryakut"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open-source code,{" "}
+            </a>{" "}
+            by Daria Kutluieva
+          </small>
         </ul>
       </div>
     );
